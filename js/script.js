@@ -24,3 +24,11 @@ $(function(){
     //$("ul.dropdown li ul li:has(ul)").find("a:first").append(" &raquo; ");
 
 });
+
+$(document).ready(function(){
+	$('.submit').hover(function(){
+		$(this).fadeOut(2000);
+
+	});
+
+});
