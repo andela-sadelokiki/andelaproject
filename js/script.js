@@ -1,34 +1,49 @@
-//code fo the menu
-// $(document).ready(function(){
-// 	$('.menu > li').bind('mouseover', openSubMenu);
-// 		function openSubMenu(){
-// 			$(this).find('menu li ul').css('visibility', 'visible');
-// 		};
-// });
 
+$(document).ready(function () {
+  
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    
+    $('#slider').css({ width: slideWidth, height: slideHeight });
+    
+    $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    
+    $('#slider ul li:last-child').prependTo('#slider ul');
 
-$(function(){
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 1500, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
 
-    $("ul.menu li").hover(function(){
-    
-        //$(this).addClass("hover");
-        $('ul:first',this).css('visibility', 'visible');
-    
-    }, function(){
-    
-        //$(this).removeClass("hover");
-        $('ul:first',this).css('visibility', 'hidden');
-    
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 1500, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
     });
-    
-    //$("ul.dropdown li ul li:has(ul)").find("a:first").append(" &raquo; ");
+
+    $('input[type="radio"]').click(function () {
+        moveRight();
+    });
+
 
 });
-
-$(document).ready(function(){
-	$('.submit').hover(function(){
-		$(this).fadeOut(2000);
-
-	});
-
-});
+       
+// $(document).ready(function(){
+//     $('result').click(function() {
+//         var selValue = $('input[name=q1]:checked').val(); 
+//         $('#show').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
+//     });
+// });
