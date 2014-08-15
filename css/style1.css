@@ -28,10 +28,17 @@ header{
 	#blk2{
 	position: absolute;
 	top: 30px;
-	color: #39d1b4;
-	left: 20%;
-	font-size: 18px;
+	color: #000;
+	left: 10%;
+	font-size: 30px;
 	font-weight: bolder;
+}
+
+img{
+	z-index: 0;
+	height: 613px;
+	width: 100%;
+	opacity: 0.5;
 }
 
 .menu{
@@ -56,7 +63,7 @@ header{
 .menu > li > a{
 margin-top: 20px;
 margin-bottom: 0px;
-color: #39d1b4;
+color: #000;
 }
 /*this has effect on the menu link's positioning*/
 .menu  > li a:link{

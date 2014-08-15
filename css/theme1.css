@@ -24,6 +24,7 @@ img{
 	z-index: 0;
 	height: 613px;
 	width: 100%;
+	opacity: 0.5;
 }
 
 /*KNOW YOUR STYLE*/
@@ -39,6 +40,14 @@ section h1{
 	font-family: TitilliumLight;
 	font-size: 500%;
 	color: #34495e;	
+}
+section h2{
+	position: absolute;
+	left: 34%;
+	font-family: TitilliumLight;
+	font-size: 180%;
+	color: #34495e;
+	margin-top: 200px;
 }
 
 /*button on index page*/
