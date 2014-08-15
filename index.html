@@ -6,22 +6,23 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src ="js/jquery.js"></script>
 		<script src ="js/script.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			// default stylsheet
+			$("#theme1").click(function() {
+			$("link[rel=stylesheet]").attr({href : "css/theme1.css"});
+		});
+		});
+		</script>
 	</head>
 
 	<body>
 		<header>
 			<div id = "blk"></div>
-			<ul class = "menu">
-				<li><a href="index.html">The Team</a>
-					<ul>
-						<li><a href="#">@dami</a></li>
-						<li><a href="#">@bello</a></li>
-						<li><a href="#">@ThisIsAndela</a></li>
-					</ul>
-				</li>
-			</ul>
+			<img src="img/image.jpg">
 		</header>
-		<section><h1>KNOW YOUR STYLE !</h1></section>
+
+		<section><h1>LADY, WHAT'S YOUR STYLE ?</h1></section>
 		<a href="test.html" class="submit">Take Style Test</a>
 
 		<footer>
@@ -29,8 +30,10 @@
 			<div id = "foot">
 				<ul>
 					<li><a href="#">@damilola</a></li>
-					<li><a href="#">@Surge</a></li>
+
+					<li><a href="#">@CallSurge</a></li>
 					<li><a href="#">@ThisIsAndela</a></li>
+					<li><a href="#" style="color:#d35400" id = "theme1">Change Theme</a></li>
 				</ul>	
 			</div>
 

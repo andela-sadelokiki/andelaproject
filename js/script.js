@@ -39,11 +39,4 @@ $(document).ready(function () {
     });
 
 
-});
-       
-// $(document).ready(function(){
-//     $('result').click(function() {
-//         var selValue = $('input[name=q1]:checked').val(); 
-//         $('#show').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
-//     });
-// });
+})

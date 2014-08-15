@@ -3,15 +3,26 @@
 <head>
 	<title>..:TAKE THAT TEST NOW !:..</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
 	<link rel="stylesheet" type="text/css" href="css/style1.css">
 
 	<script type="text/javascript" src= "js/jquery.js"></script>
 	<script type="text/javascript" src= "js/script.js"></script>
 
 		<script type="text/javascript">
+
+            $(document).ready(function() {
+            // default stylsheet
+            $("#theme1").click(function() {
+            $("link[rel=stylesheet]").attr({href : "css/theme2.css"});
+        });
+        });
 	$(document).ready(function(){
     $('#btnGetValue').click(function() {
+
+
+
 
     	// var ntChecked1 = $("input:radio[name='q1']").is(":checked");
     	// var ntChecked2 = $("input:radio[name='q2']").is(":checked");
@@ -35,21 +46,20 @@
     	var selValue9 = parseInt($('input[name=q9]:checked').val()); 
         var selValue10 = parseInt($('input[name=q10]:checked').val()); 
         var total = selValue1 + selValue2 + selValue3 + selValue4 + selValue5 +selValue6+ selValue7+ selValue8+ selValue9+ selValue10;
-        // $('#show').html('<br/>Selected Radio Button Value is : <b>' + total + '</b>');
 
-        // if(ntChecked1 && ntChecked2 && ntChecked3 && ntChecked4 && ntChecked5 && ntChecked6 && ntChecked7 && ntChecked8 && ntChecked9 && ntChecked10{
-        // 	$('#show').html('</b> Pls play the game !' );
-        // }
 
          if(0 <= total && total <=30){
-        	$('#show').html('</br>Your Score is : <b>' + total + '</b> </br> Under which rock do u live !' );
+        	$('#show').html('<p id="last">Your Score is :' + total + '</br>Under which rock do u live ?</p>' );
         }
         else if(total >= 31 && total <=69){
-        	$('#show').html('<br/>Your Score is : <b>' + total + '</b> </br>Not Bad, but not too trendy' );
+        	$('#show').html('<p id="last"><br/>Your Score is :' + total + '</br> Not Bad, but not too trendy</p>' );
         }
-        else{
-        	$('#show').html('<br/>Your Score is : <b>' + total + '</b> </b> WoW! so cool and hot!!!' );
+        else if(total >=70 && total <= 100){
+        	$('#show').html('<p id="last">Your Score is :' + total + '</br>Good to go, Mrs Trendy!!!</p>' );
         }
+       	else{
+       		$('#show').html('Pls answer all the questions </br> <a href="test.html" id="exit">Start</a>' );
+       	}
 
     });
 });
@@ -58,105 +68,108 @@
 <body>
 		<header>
 			<div id = "blk"></div>
+
+			<div id ="blk2"><strong>KNOW YOUR FASHION STYLE !</strong></div>
+
 			<div id ="blk2">KNOW YOUR FASHION STYLE !</div>
+
 			<ul class = "menu">
 				<li><a href="index.html">Home</a>
 				</li>
 			</ul>
 		</header>
 <div id="slider">
- <!--  <a href="#" class="control_next">>></a> -->
+ 
   <a href="#" class="control_prev"><</a>
   <ul>
     <li>
-    	<h3>1. What is your favourite bag?</h3></br>  
-    	<input type="radio" name="q1" value="10" id="q1c">Coach,Fendi Louis Vuitton</br>   
-    	<input type="radio" name="q1" value="7" id="q1c">A small clucth</br>
-    	<input type="radio" name="q1" value="5" id="q1b">Big and fits everything</br>  
-		<input type="radio" name="q1" value="3" id="q1a">Duffel bag</br>     
+        <h3>1. What is your favourite bag?</h3></br>  
+        <input type="radio" name="q1" value="10" id="q1c">Coach, Fendi Louis Vuitton</br>   
+        <input type="radio" name="q1" value="7" id="q1c">A small clucth</br>
+        <input type="radio" name="q1" value="5" id="q1b">Big and fits everything</br>  
+        <input type="radio" name="q1" value="3" id="q1a">Duffel bag</br>     
     </li>
 
     <li>
-    	<h3>2. What shoes do you prefer?</h3></br>  
-    	<input type="radio" name="q2" value="10" id="q1c">High Heels</br>   
-    	<input type="radio" name="q2" value="7" id="q1c">Loafers</br>
-    	<input type="radio" name="q2" value="5" id="q1b">Tennis</br>  
-    	<input type="radio" name="q2" value="3" id="q1a">Boots</br>
+        <h3>2. What shoes do you prefer?</h3></br>  
+        <input type="radio" name="q2" value="10" id="q1c">High Heels</br>   
+        <input type="radio" name="q2" value="7" id="q1c">Loafers</br>
+        <input type="radio" name="q2" value="5" id="q1b">Tennis</br>  
+        <input type="radio" name="q2" value="3" id="q1a">Boots</br>
     </li>
 
     <li>
-    	<h3>3. Which is your best outfit for a night out?</h3></br>  
-    	<input type="radio" name="q3" value="10" id="q1c"> Tight mini skirt and flirty top </br>   
-    	<input type="radio" name="q3" value="7" id="q1c"> Black top and skinny jeans </br>
-    	<input type="radio" name="q3" value="5" id="q1b"> Form-fitting pencil skirt and a silky top, made </br>    with real silk</br>  
-		<input type="radio" name="q3" value="3" id="q1a">Whatever I was wearing at work </br>
+        <h3>3. Which is your best outfit for a night out?</h3></br>  
+        <input type="radio" name="q3" value="10" id="q1c"> Tight mini skirt and flirty top </br>   
+        <input type="radio" name="q3" value="7" id="q1c"> Black top and skinny jeans </br>
+        <input type="radio" name="q3" value="5" id="q1b"> Form-fitting pencil skirt and a silky top, made </br>    with real silk</br><input type="radio" name="q3" value="3" id="q1a">Whatever I was wearing at work </br>
     </li>
 
     <li>
-    	<h3>4. For lounging around you throw on your?</h3></br> 
-    	<input type="radio" name="q4" value="10" id="q1c">Sweatpants that say "sexy" on the butt </br>   
-    	<input type="radio" name="q4" value="7" id="q1c"> Band t-shirt and chucks</br>
-    	<input type="radio" name="q4" value="5" id="q1b">  Sweatsuit, like the kind I use for working out </br>  
-    	<input type="radio" name="q4" value="3" id="q1a"> Fat pants and a baggy t-shirt </br>  
+        <h3>4. For lounging around you throw on your?</h3></br> 
+        <input type="radio" name="q4" value="10" id="q1c">Sweatpants that say "sexy" on the butt </br>   
+        <input type="radio" name="q4" value="7" id="q1c"> Band t-shirt and chucks</br>
+        <input type="radio" name="q4" value="5" id="q1b">  Sweatsuit, like the kind I use for working out </br>  
+        <input type="radio" name="q4" value="3" id="q1a"> Fat pants and a baggy t-shirt </br>  
     </li>
 
     <li>
-    	<h3>5. What would you wear for a typical day at work?</h3></br> 
-    	<input type="radio" name="q5" value="10" id="q1c">A really nice suit ensemble  </br>   
-    	<input type="radio" name="q5" value="7" id="q1c">  Something cleans</br>
-    	<input type="radio" name="q5" value="5" id="q1b">   Jeans and sneakers</br>  
-		<input type="radio" name="q5" value="3" id="q1a">Tight mini skirt and flirty top </br>
+        <h3>5. What would you wear for a typical </br> day at work?</h3></br> 
+        <input type="radio" name="q5" value="10" id="q1c">A really nice suit ensemble  </br>   
+        <input type="radio" name="q5" value="7" id="q1c">  Something cleans</br>
+        <input type="radio" name="q5" value="5" id="q1b">   Jeans and sneakers</br>  
+        <input type="radio" name="q5" value="3" id="q1a">Tight mini skirt and flirty top </br>
     </li>
 
         <li>
-    	<h3>6. What do you daydream your wedding dress looks like?</h3></br>  
-    	<input type="radio" name="q6" value="10" id="q1c">Vera Wang, of course! </br>   
-    	<input type="radio" name="q6" value="7" id="q1c"> Something to show off my great arms </br>
-    	<input type="radio" name="q6" value="5" id="q1b"> Well, probably not white </br>  
-		<input type="radio" name="q6" value="3" id="q1a"> Something to cover up my flabby thighs</br>       
+        <h3>6. What do you daydream your wedding </br> dress looks like?</h3></br>  
+        <input type="radio" name="q6" value="10" id="q1c">Vera Wang, of course! </br>   
+        <input type="radio" name="q6" value="7" id="q1c"> Something to show off my great arms </br>
+        <input type="radio" name="q6" value="5" id="q1b"> Well, probably not white </br>  
+        <input type="radio" name="q6" value="3" id="q1a"> Something to cover up my flabby thighs</br>       
     </li>
 
     <li>
-    	<h3>7.Which male celebrity listed below do you love to walk down the red carpet with?</h3></br>  
-    	<input type="radio" name="q7" value="10" id="q1c">David Beckham s</br>   
-    	<input type="radio" name="q7" value="7" id="q1c">George Clooney </br>
-    	<input type="radio" name="q7" value="5" id="q1b"> Colin Ferrell </br>  
-    	<input type="radio" name="q7" value="3" id="q1a"> Tom Hanks </br>
+        <h3>7.Which male celebrity listed below do you </br>love to walk down the red carpet with?</h3></br>  
+        <input type="radio" name="q7" value="10" id="q1c">David Beckham </br>   
+        <input type="radio" name="q7" value="7" id="q1c">George Clooney </br>
+        <input type="radio" name="q7" value="5" id="q1b"> Colin Ferrell </br>  
+        <input type="radio" name="q7" value="3" id="q1a"> Tom Hanks </br>
     </li>
 
     <li>
-    	<h3>8. What item of clothing would you pull out of your laundry hamper to wear again?</h3></br>  
-    	<input type="radio" name="q8" value="10" id="q1c">WTF !!</br>   
-    	<input type="radio" name="q8" value="7" id="q1c">Something cleans</br>
-    	<input type="radio" name="q8" value="5" id="q1b">Socks</br>  
-		<input type="radio" name="q8" value="3" id="q1a">Tight mini skirt and flirty top </br>
+        <h3>8. What item of clothing would you pull out of </br>your laundry hamper to wear again?</h3></br>  
+        <input type="radio" name="q8" value="10" id="q1c">WTF !!</br>   
+        <input type="radio" name="q8" value="7" id="q1c">Something clean</br>
+        <input type="radio" name="q8" value="5" id="q1b">Socks</br>  
+        <input type="radio" name="q8" value="3" id="q1a">Tight mini skirt and flirty top </br>
     </li>
 
     <li>
-    	<h3>9. Tom Ford is know as the former head of </br> which fashion house?</h3></br> 
-    	<input type="radio" name="q9" value="10" id="q1c">Gucci</br>   
-    	<input type="radio" name="q9" value="0" id="q1c">chloe</br>
-    	<input type="radio" name="q9" value="0" id="q1b">Channel</br>  
-    	<input type="radio" name="q9" value="0" id="q1a">Prada</br> 
+        <h3>9. Tom Ford is know as the former head of </br> which fashion house?</h3></br> 
+        <input type="radio" name="q9" value="10" id="q1c">Gucci</br>   
+        <input type="radio" name="q9" value="0" id="q1c">chloe</br>
+        <input type="radio" name="q9" value="0" id="q1b">Channel</br>  
+        <input type="radio" name="q9" value="0" id="q1a">Prada</br> 
     </li>
 
     <li>
-    	<h3>10 What is your favorite accessory?</h3></br> 
-    	<input type="radio" name="q10" value="10" id="q1c">Diamonds</br>   
-    	<input type="radio" name="q10" value="7" id="q1c">Necklace...that sits in the cleavage area</br>
-    	<input type="radio" name="q10" value="5" id="q1b"> I never take off my earrings </br>  
-		<input type="radio" name="q10" value="3" id="q1a">Wristband buckles</br>
-	</li>
+        <h3>10 What is your favorite accessory?</h3></br> 
+        <input type="radio" name="q10" value="10" id="q1c">Diamonds</br>   
+        <input type="radio" name="q10" value="7" id="q1c">Necklace...that sits in the cleavage area</br>
+        <input type="radio" name="q10" value="5" id="q1b"> I never take off my earrings </br>  
+        <input type="radio" name="q10" value="3" id="q1a">Wristband buckles</br>
+    </li>
 
-	<li>
-		
-		<input type="button" id="btnGetValue" Value="Get Value" />
-		<p id ="show"></p>
-		</br>
-		</br>
-		<A HREF="index.html">Exit</A>
+    <li>
+        
+        <input type="button" id="btnGetValue" Value="View Result" />
+        <p id ="show"></p>
+        </br>
+        </br>
+        <A HREF="index.html" id="exit">Exit</A>
 
-	</li>
+    </li>
 
    </ul>
 </div>
@@ -166,9 +179,11 @@
 			<div id = "foot">
 				<ul>
 					<li><a href="#">@damilola</a></li>
-					<li><a href="#">@Surge</a></li>
+
+					<li><a href="#">@CallmeSurge</a></li>
 					<li><a href="#">@ThisIsAndela</a></li>
-				</ul>	
+                    <li><a href="#" style="color:#d35400" id = "theme1">Change Theme</a></li>
+			</ul>	
 			</div>
 
 		</footer>
